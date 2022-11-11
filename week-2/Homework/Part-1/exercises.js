@@ -13,8 +13,24 @@
  *      .....
  * </div>
  */
+
+
 function exerciseOne(arrayOfPeople) {
   let content = document.querySelector("#content");
+
+  arrayOfPeople.forEach(person => {
+  const nameOfPerson=document.createElement("h1")
+  const jobOfPerson=document.createElement("h2")
+
+//assigning content
+  nameOfPerson.textContent=person.name;
+  jobOfPerson.textContent=person.job;
+
+//appending child to parent
+  content.appendChild(nameOfPerson)
+  content.appendChild(jobOfPerson)
+
+  });
 }
 
 /**
@@ -24,8 +40,22 @@ function exerciseOne(arrayOfPeople) {
  * All of your HTML should go inside the Div tag with the id "content".
  *
  */
+
 function exerciseTwo(shopping) {
   //Write your code in here
+  let content = document.querySelector("#content");
+  const li= document.createElement("ul");
+  content.appendChild(li);
+
+  //to create a list of each element 
+  shopping.forEach(element => {
+    
+    const listItem=document.createElement("li")
+    listItem.textContent= element;
+   
+    li.appendChild(listItem)
+  });
+  
 }
 
 /**
@@ -59,8 +89,40 @@ function exerciseTwo(shopping) {
 **/
 function exerciseThree(books) {
   //Write your code in here
-}
 
+  let content = document.querySelector("#content");
+  const list = document.createElement("ul");
+  content.appendChild(list);
+
+  let heading =document.createElement("h1");
+  let i = 1;
+
+  list.style.display = "flex";
+  
+  books.forEach(element => {
+    
+    const listItem =document.createElement("li")
+    const paragraph=document.createElement('p')
+    const image=document.createElement("img")
+
+   image.src = "images/book" + i + ".jpg"; 
+   i++;
+
+   
+    if (element.alreadyRead){
+      list.style.backgroundColor ="green";
+    }else {
+      listItem.style.color="red";
+    }
+    paragraph.textContent = `Title: ${element.title} - Author: ${element.author}`
+    list.appendChild(listItem);
+    listItem.appendChild(paragraph)
+    listItem.appendChild(image)
+
+
+  });
+
+}
 //
 //
 //
@@ -83,12 +145,15 @@ let shopping = ["Milk", "Break", "Eggs", "A Dinosaur", "Cake", "Sugar", "Tea"];
 
 exerciseTwo(shopping);
 
+
+
 const books = [
   {
     title: "The Design of Everyday Things",
     author: "Don Norman",
     alreadyRead: false
   },
+
   {
     title: "The Most Human Human",
     author: "Brian Christian",
