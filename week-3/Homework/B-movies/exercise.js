@@ -58,10 +58,110 @@ var movies = [
   },
 ];
 
-// create showMovies function
+//Task 1 create Showmovie func with Timeout that iterates thru the array
+//updates the number of movies
+
+function showMovies(){
+
+  setTimeout(() => {
+
+    movies.map((movie)=>{
+      let allMovieElement= document.querySelector("#all-movies");
+      let pElement= document.createElement('p');
+      pElement.innerText= movie.title + " - " + movie.director + " - " + movie.type;
+      allMovieElement.appendChild(pElement);
+      
+    });
+    let moviesNumber= document.querySelector ("#movies-number");
+      moviesNumber.innerText = movies.length;
+      
+  }, 1000);
+
+};
+  showMovies()
 
 
-// create a new movie object for your favorite movie
+//Task 2 Create a new function called addMovie with Timeout. Pushes new movie to the array
 
 
-// create addMovies function
+function addMovieFunc(movie){
+
+  setTimeout(() => {
+
+    movies.push(movie);
+
+      let allMovieElement= document.querySelector("#all-movies");
+      let pElement= document.createElement('p');
+      pElement.innerText= movie.title + " - " + movie.director + " - " + movie.type;
+      allMovieElement.appendChild(pElement);
+    
+    let moviesNumber= document.querySelector ("#movies-number");
+      moviesNumber.innerText = movies.length;
+
+    }, 2000);
+
+  };
+
+  let myMovie = 
+
+    {
+    title:"The Sound of Music",
+    director:"Robert Wise",
+    type:" musical",
+    haveWatched:true,
+    };
+
+
+  addMovieFunc(myMovie);
+
+  //Task 4 creating input fields
+
+  let allMovieElement= document.querySelector("#all-movies");
+  let formElement=document.createElement("form");
+    allMovieElement.appendChild(formElement);
+
+  function addInputElement(property){
+    let inputElement=document.createElement("input")
+
+    inputElement.placeholder=property;
+    inputElement.id=property;
+    formElement.appendChild(inputElement);
+    linebreak = document.createElement("br");
+    formElement.appendChild(linebreak);
+  };
+
+ addInputElement("title");
+ addInputElement("director");
+ addInputElement("type");
+ addInputElement("haveWatched");
+
+//create save button
+
+  let button=document.createElement("button");
+      button.innerHTML="save"
+      formElement.appendChild(button);
+      
+//upon click on the save button ,it is adding new movie to the array and renders it
+
+  button.addEventListener("click",(event) =>{
+    event.preventDefault();
+    let titleAttribute=document.querySelector("#title")
+    let directorAttribute=document.querySelector("#director")
+    let typeAttribute=document.querySelector("#type")
+    let haveWatchedAttribute=document.querySelector("#haveWatched")
+    let movie = {
+      title: titleAttribute.value,
+      director: directorAttribute.value,
+      type: typeAttribute.value,
+      haveWatched: haveWatchedAttribute.value
+    };
+    addMovieFunc(movie);
+
+    //clears input field
+
+       titleAttribute.value=" ";
+       directorAttribute.value= " ";
+       typeAttribute.value= " ";
+       haveWatchedAttribute.value= " ";
+    
+  });
