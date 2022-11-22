@@ -101,3 +101,12 @@ var mentors = [
 
 //YOUR CODE HERE
 
+//ex 1
+
+mentors.forEach(function(element) {
+  if (element.job.city === "Barcelona" && element.skills.includes("React")){
+    
+  console.log(`Hi, my name is ${element.firstName} ${element.lastName}. I work in Barcelona and i know React`);
+  }
+
+});

@@ -5,11 +5,11 @@ Make sure you run the file after and it outputs the correct results.
 */
 
 let house = {
-  address: "1 Kinning Park",
-  previousOwners: ["Claire M.", "John A."],
+  address: "51 Berkely Road",
+  previousOwners: ["Brian M.", "Fiona S."],
   currentOwner: {
     firstName: "Margaret",
-    lastName: "Conway",
+    lastName: "Montgomery",
   },
 };
 

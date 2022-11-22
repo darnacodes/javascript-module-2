@@ -10,3 +10,10 @@ var kitten = {
 
 // YOUR CODE HERE
 
+function showKittenProperties (kitten){
+    kitten.forEach((property) => {
+        console.log(kitten.property)
+    })
+};
+
+showKittenProperties(kitten)

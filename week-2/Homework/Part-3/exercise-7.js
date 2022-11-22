@@ -41,9 +41,24 @@ var product2 = {
   price: 9.99,
   stock: 2
 };
+var product3 = {
+  id: 3,
+  name: "RoboCleaner",
+  price: 150.50,
+  stock: 10
+};
+var product4 = {
+  id: 4,
+  name: "SaniClean Spray",
+  price: 4.50,
+  stock: 5
+};
+
 
 products.push(product1);
 products.push(product2);
+products.push(product3);
+products.push(product4);
 
 var shoppingCart = {
   totalPrice: 0,
@@ -51,9 +66,11 @@ var shoppingCart = {
 };
 
 function addToShoppingCart(id){
-
+  let product = products.find((product)=>product.id=== id);
+  shoppingCart.selectedProducts.push(product);
+  shoppingCart.totalPrice += product.price
 }
-
+/*
 function removeFromShoppingCart(id){
 
 }
@@ -61,7 +78,7 @@ function removeFromShoppingCart(id){
 function shop(){
 
 }
-
+*/
 //results
 addToShoppingCart(1);
 console.log("Step 1");

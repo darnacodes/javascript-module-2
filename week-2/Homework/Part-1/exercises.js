@@ -94,30 +94,33 @@ function exerciseThree(books) {
   const list = document.createElement("ul");
   content.appendChild(list);
 
-  let heading =document.createElement("h1");
+  //let heading =document.createElement("h1");
   let i = 1;
 
-  list.style.display = "flex";
+  //list.style.display = "flex";
   
-  books.forEach(element => {
-    
-    const listItem =document.createElement("li")
+  books.forEach(book => {
+
     const paragraph=document.createElement('p')
+    const listItem =document.createElement("li")
+    //paragraph.className= 
     const image=document.createElement("img")
 
    image.src = "images/book" + i + ".jpg"; 
    i++;
 
    
-    if (element.alreadyRead){
-      list.style.backgroundColor ="green";
+    if (book.alreadyRead){
+      listItems.classList.add(alreadyRead);
     }else {
-      listItem.style.color="red";
+      listItem.classList.add("IHaveNotReadThisBook");
     }
+
+
     paragraph.textContent = `Title: ${element.title} - Author: ${element.author}`
     list.appendChild(listItem);
-    listItem.appendChild(paragraph)
-    listItem.appendChild(image)
+    listItem.appendChild(paragraph);
+    listItem.appendChild(image);
 
 
   });
@@ -136,7 +139,7 @@ function exerciseThree(books) {
 let people = [
   { name: "Chris", job: "Teacher" },
   { name: "Joanna", job: "Student" },
-  { name: "Boris", job: "Prime Minister" }
+  { name: "Boris", job: "Prime Minister"}
 ];
 
 exerciseOne(people);
