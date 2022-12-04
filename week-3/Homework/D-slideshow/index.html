@@ -2,7 +2,9 @@
 <html>
   <head>
     <title>Slideshow</title>
-    <script src="slideshow.js"></script>
+    <script src="slideshow.js" defer></script>
+  </head>
+  <body>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -10,8 +12,26 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+    
     <!-- Write your HTML in here -->
+
+     <div id="content">
+      <h1>Cute Cats Carousel</h1>
+     </div>
+     <div id="random-image">
+     </div>
+     <div id="numberImage"></div>
+   <div id="buttons">
+    <button  id="auto-back-btn"><h3>Autoback</h3></button>
+    <button  id="back-btn"><h3>back</h3></button>
+    <button  id="stop-btn"><h3>stop</h3></button>
+    <button  id="forward-btn"><h3>forward</h3></button>
+    <button  id="auto-forward-btn"><h3>Autoforward</h3></button>
+   </div>
+   
+    
+    
+   
+   
   </body>
 </html>

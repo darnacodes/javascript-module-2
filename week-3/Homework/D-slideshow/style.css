@@ -1,1 +1,34 @@
 /** Write your CSS in here **/
+#random-image{
+    display:block;
+    margin: auto;
+}
+
+img{
+    width: 600px;
+    height: 500px;
+    margin: auto;
+    display: block;
+}
+
+h1{
+    text-align: center;
+    background-color:darkkhaki;
+    width: 600px;
+    display: block;
+    margin: auto;
+    
+}
+
+#buttons{
+    text-align: center;
+    font-size:10px;
+    
+}
+
+#numberImage{
+    text-align: center;
+    font-size:larger;
+    color:darkkhaki
+
+}
